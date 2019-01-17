@@ -1,6 +1,6 @@
 function [dir_input, dir_output, dir_results, carrier_image_filename, output_image_filename, secret_msg_str, channel] = steganography_init()
 % steganography_init() Sets up Matlab workspace for steganography functions
-dir = 'C:\Users\Vimukthi\Desktop\Steganographer\';
+dir = 'G:\GIT\Steganographer\';
 % Ensure correct directory
 cd(dir);
 

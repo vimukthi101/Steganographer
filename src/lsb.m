@@ -28,16 +28,19 @@ imc_stego = im_stego(:,:,channel);
 % Verify and compare difference
 difference = (imc - imc_stego) .^ 2;
 
+% Print statistics
+[im_psnr, ssimval, ssimmap, cc] = steganography_statistics(imc, imc_stego, encode_time);
+
 % Display images
-subplot(1,3,1);
+subplot(1,4,1);
 imshow(uint8(im));
 title('Carrier');
-subplot(1,3,2);
+subplot(1,4,2);
 imshow(uint8(im_stego));
 title('Stego image');
-subplot(1,3,3);
+subplot(1,4,3);
 imshow(difference);
-title('Difference');
-
-% Print statistics
-[im_psnr] = steganography_statistics(imc, imc_stego, encode_time);
+title('Difference of PSNR');
+subplot(1,4,4);
+imshow(ssimmap);
+title('Difference of SSIM');
