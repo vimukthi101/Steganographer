@@ -9,7 +9,7 @@ function steg = steg_lsb_encode(carrier, message_bin)
 %   steg         - Image with encoded message.
 
 if (length(message_bin(:)) > length(carrier(:)))
-    error('secret is too large to fit within carrier');
+    error('Cover image is too small to hide the message.');
 else
     message_padded = zeros(length(carrier(:)), 1);
     message_padded(1:length(message_bin)) = message_bin;

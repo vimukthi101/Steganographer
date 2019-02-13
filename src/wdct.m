@@ -37,7 +37,7 @@ imc_stego = im_stego(:,:,channel);
 difference = (imc - imc_stego) .^ 2;
 
 % Print statistics
-[im_psnr, ssimval, ssimmap, cc] = steganography_statistics(imc, imc_stego, encode_time);
+[im_mse, im_psnr, ssimval, ssimmap, cc] = steganography_statistics(imc, imc_stego, encode_time);
 
 % Display images
 subplot(1,4,1);
